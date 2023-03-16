@@ -1,11 +1,16 @@
-#include <stdio.h>
-#include <stdio.h>
+#include <unistd.h>
+
 /**
- * main - A c program that prints a line to the standard error
+ * main - prints an error message to stderr
+ *
  * Return: 1
-*/
+ */
 int main(void)
 {
-	fput("and that piece of art is useful\" - Dora Korpar, 2015-10-19\n",stdout);
-	return	(1);
+	const char *msg = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
+	ssize_t len = sizeof(msg) - 1;
+	/* write the message to stderr */
+	if (write(2, msg, len) != len)
+		return 1;
+	return 1;
 }
