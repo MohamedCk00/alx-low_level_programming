@@ -8,21 +8,22 @@
 */
 int main(void)
 {
-	int p, q;
+	int i, j;
 
-	for (p = 0; p < 98; p++)
+	for (i = 0; i < 99; i++)
 	{
-	for (q = p + 1; q <= 99; q++)
+	for (j = i + 1; j <= 99; j++)
 	{
-	putchar((p / 10) + '0');
-	putchar((p % 10) + '0');
+	putchar((i / 10) + '0');
+	putchar((i % 10) + '0');
 	putchar(' ');
-	putchar((q / 10) + '0');
-	putchar((q % 10) + '0');
-	if (p == 98 && q == 99)
-	continue;
+	putchar((j / 10) + '0');
+	putchar((j % 10) + '0');
+	if (i != 99 || j != 99)
+	{
 	putchar(',');
 	putchar(' ');
+	}
 	}
 	}
 	putchar('\n');
